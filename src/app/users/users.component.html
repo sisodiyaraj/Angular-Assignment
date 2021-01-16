@@ -1,0 +1,31 @@
+<br>
+<div class="block">
+    <h1 class="title"> *********{{page_title}}********* </h1>
+</div>
+<div style="text-align: center;">
+    <div *ngIf="users; then thenBlock1 else elseBlock1"></div>
+    <ng-template #thenBlock1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>    
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td ngrHighlighter> {{user.email}} </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </ng-template>
+    <ng-template #elseBlock1>
+        <p>no users are available</p>
+        
+        
+    </ng-template>
+</div>
